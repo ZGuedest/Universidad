@@ -19,7 +19,7 @@ from django.urls import path
 from Modulos.Academica.views import formularioContacto
 from Modulos.Academica.views import contactar
 
-from django.view.generic import TemplateView
+from django.views.generic import TemplateView
 
 
 urlpatterns = [
