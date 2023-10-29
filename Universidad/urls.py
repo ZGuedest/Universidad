@@ -26,6 +26,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('tasks/', include('Modulos.Academica.urls')),
     path('', TemplateView.as_view(template_name='index.html')),
-    # path('formularioContacto/', formularioContacto),
-    # path('contactar/', contactar)
+    path('formularioContacto/', formularioContacto),
+    path('contactar/', contactar)
 ]
