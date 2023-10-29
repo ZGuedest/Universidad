@@ -19,10 +19,12 @@ from django.urls import path
 from Modulos.Academica.views import formularioContacto
 from Modulos.Academica.views import contactar
 
+from django.view.generic import TemplateView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('formularioContacto/', formularioContacto),
-    path('contactar/', contactar)
-
+    path('', TemplateView.as_view(template_name='index.html')),
+    # path('formularioContacto/', formularioContacto),
+    # path('contactar/', contactar)
 ]
