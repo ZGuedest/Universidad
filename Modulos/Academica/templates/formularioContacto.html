@@ -5,7 +5,7 @@
     </head>
     <body>
         <h1>Contáctenos</h1>
-        <form action="">
+        <form action="/contactar/" method="POST"> {%csrf_token %}
             <p>Asunto: <input type="text" name="textAsunto"/></p>
             <p>Email: <input type="email" name="textEmail"/></p>
             <p>
