@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from Modulos.Academica.views import formularioContacto
 from Modulos.Academica.views import contactar
 
@@ -24,6 +24,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('tasks/', include('Modulos.Academica.urls')),
     path('', TemplateView.as_view(template_name='index.html')),
     # path('formularioContacto/', formularioContacto),
     # path('contactar/', contactar)
