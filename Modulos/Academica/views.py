@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
+from rest_framework import viewsets
+from Modulos.Academica.serializer import TaskSerializer
+from .models import Task
 
 # Create your views here.
 
@@ -16,3 +19,8 @@ def contactar(request):
         send_mail(asunto, mensaje, email_desde,email_para, fail_silently = False)
         return render(request, "contactoExitoso.html")
     return render(request, "formularioContacto.html")
+
+
+class TaskView(viewsets.ModelViewSet):
+    serializer_class = TaskSerializer
+    queryset=Task.objects.all()
